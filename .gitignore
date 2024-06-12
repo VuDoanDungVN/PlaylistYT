@@ -1,0 +1,6 @@
+#Bỏ qua các tệp chứa json
+*.json
+#Bỏ qua file .env
+*.env
+#Bỏ qua các tệp txt
+*.txt

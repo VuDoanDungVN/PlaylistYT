@@ -1,15 +1,17 @@
 import os
-import google.auth
+from dotenv import load_dotenv
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
+# Load environment variables from .env file
+load_dotenv()
 # Nếu bạn đã có token, hãy tải nó
 # Nếu chưa có, bạn sẽ phải xác thực lại và lưu token
-SCOPES = ['https://www.googleapis.com/auth/youtube.force-ssl']
-CLIENT_SECRETS_FILE = 'client_secret_450588147988-n7il4pm13j17obco9ulu8j54b8110t33.apps.googleusercontent.com.json'
-VIDEO_IDS_FILE = 'video_ids.txt'  # File chứa các ID video
+SCOPES = os.getenv('SCOPES')
+CLIENT_SECRETS_FILE = os.getenv('CLIENT_SECRETS_FILE')
+VIDEO_IDS_FILE = os.getenv('VIDEO_IDS_FILE')  # File chứa các ID video
 
 def get_authenticated_service():
     creds = None

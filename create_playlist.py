@@ -8,7 +8,7 @@ from googleapiclient.discovery import build
 # Nếu bạn đã có token, hãy tải nó
 # Nếu chưa có, bạn sẽ phải xác thực lại và lưu token
 SCOPES = ['https://www.googleapis.com/auth/youtube.force-ssl']
-CLIENT_SECRETS_FILE = 'client_secret_450588147988-n7il4pm13j17obco9ulu8j54b8110t33.apps.googleusercontent.com.json'
+CLIENT_SECRETS_FILE = 'Mã API'
 VIDEO_IDS_FILE = 'video_ids.txt'  # File chứa các ID video
 
 def get_authenticated_service():

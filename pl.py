@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, filedialog
 from create_playlist import get_authenticated_service, create_playlist
 
 def create_playlist_ui():
@@ -20,6 +20,13 @@ def create_playlist_ui():
     def open_remove_video_ui():
         from remove_video_playlist import remove_video_from_playlist_ui
         remove_video_from_playlist_ui(service)
+
+    def upload_video_ids():
+        filename = filedialog.askopenfilename(initialdir="/", title="Select file",
+                                              filetypes=(("text files", "*.txt"), ("all files", "*.*")))
+        if filename:
+            # TODO: Add your code here to handle the uploaded file
+            print(f'File uploaded: {filename}')
 
     root = tk.Tk()
     root.title("Playlist Manager")
@@ -53,9 +60,9 @@ def create_playlist_ui():
 
     remove_video_button = tk.Button(buttons_frame, text="Remove Video from Playlist", command=open_remove_video_ui, width=button_width, height=button_height)
     remove_video_button.grid(row=0, column=1, padx=5)
-
-    dummy_button = tk.Button(buttons_frame, text="Dummy Button", width=button_width, height=button_height)
-    dummy_button.grid(row=0, column=2, padx=5)
+    
+    upload_button = tk.Button(buttons_frame, text="Upload Video IDs", command=upload_video_ids, width=button_width, height=button_height)
+    upload_button.grid(row=0, column=3, padx=5)
 
     root.mainloop()
 

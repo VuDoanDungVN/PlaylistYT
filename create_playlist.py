@@ -9,7 +9,7 @@ from googleapiclient.discovery import build
 load_dotenv()
 # Nếu bạn đã có token, hãy tải nó
 # Nếu chưa có, bạn sẽ phải xác thực lại và lưu token
-SCOPES = os.getenv('SCOPES')
+SCOPES = [os.getenv('SCOPES')]
 CLIENT_SECRETS_FILE = os.getenv('CLIENT_SECRETS_FILE')
 VIDEO_IDS_FILE = os.getenv('VIDEO_IDS_FILE')  # File chứa các ID video
 
